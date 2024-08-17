@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Asegúrate de que la ruta sea correcta
+import logo from '../assets/logo.png'; 
 
 const LoginContainer = styled.div`
   display: flex;
@@ -123,12 +123,12 @@ const Login: React.FC = () => {
         />
         <Button onClick={handleLogin}>Iniciar Sesión</Button>
         <LinkContainer>
-          <StyledLink onClick={() => navigate('/register')}>Registrarse</StyledLink>
+          
           <StyledLink onClick={() => navigate('/reset-password')}>¿Olvidaste tu contraseña?</StyledLink>
         </LinkContainer>
       </FormContainer>
     </LoginContainer>
   );
 };
-
+// <StyledLink onClick={() => navigate('/register')}>Registrarse</StyledLink>
 export default Login;

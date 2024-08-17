@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import background from '../assets/background.jpg'; // La ruta de la imagen de fondo
+
+
 
 const ResetContainer = styled.div`
   display: flex;
@@ -9,6 +12,9 @@ const ResetContainer = styled.div`
   height: 100vh;
   background-color: #f7f9fb;
   padding: 20px;
+  background-image: url(${background});
+  background-size: cover;
+  background-position: center;
 `;
 
 const FormContainer = styled.div`
