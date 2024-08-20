@@ -123,7 +123,7 @@ const Login: React.FC = () => {
         />
         <Button onClick={handleLogin}>Iniciar Sesión</Button>
         <LinkContainer>
-          
+          <StyledLink onClick={() => navigate('/register')}>Registrarse</StyledLink>
           <StyledLink onClick={() => navigate('/reset-password')}>¿Olvidaste tu contraseña?</StyledLink>
         </LinkContainer>
       </FormContainer>
