@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png'; // La ruta del logo
-import background from '../assets/background.jpg'; // La ruta de la imagen de fondo
+import logo from '../assets/logo.png';
+import background from '../assets/background.jpg';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const LoginContainer = styled.div`
 `;
 
 const FormContainer = styled.div`
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -96,8 +96,16 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  // Datos quemados del administrador
+  const adminCredentials = {
+    email: 'admin@example.com',
+    password: 'admin123',
+  };
+
   const handleLogin = () => {
-    if (email === 'example@gmail.com' && password === '1234') {
+    if (email === adminCredentials.email && password === adminCredentials.password) {
+      // Almacenar un indicador de que el administrador ha iniciado sesión
+      localStorage.setItem('isAuthenticated', 'true');
       alert('Inicio de sesión exitoso');
       navigate('/dashboard');
     } else {
@@ -132,5 +140,5 @@ const Login = () => {
     </LoginContainer>
   );
 };
-//<StyledLink onClick={() => navigate('/register')}>Registrarse</StyledLink>
+
 export default Login;
